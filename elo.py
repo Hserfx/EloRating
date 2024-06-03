@@ -16,7 +16,7 @@ def estimated_score(players, player):
 
 def new_score(player, est_score, N):
     Sp = (N-player.place)/(N*(N-1)/2)
-    rating = player.eloPoints + 60*(Sp - est_score)
+    rating = player.eloPoints + 60*(N-1)*(Sp - est_score)
     return rating
 
 
