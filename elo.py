@@ -33,8 +33,3 @@ def update_scores(players):
         player.eloPoints = elo
 
     return players
-
-
-
-
-
