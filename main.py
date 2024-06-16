@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import List
 import uvicorn
 import os
@@ -8,7 +8,7 @@ from elo import update_scores
 class Player(BaseModel):
     userId: str
     eloPoints: int
-    eloGains: str
+    eloGains: str = Field(default='0')
     place: int
 
 
@@ -19,6 +19,7 @@ app = FastAPI()
 def update_elo(players: List[Player]):
     response = update_scores(players)
     return response
+
 
 
 if __name__ == "__main__":
