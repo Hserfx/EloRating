@@ -21,7 +21,7 @@ def new_score(player, est_score, N):
 
 
 
-
+# update
 def update_scores(players):
     updated_elo = []
 

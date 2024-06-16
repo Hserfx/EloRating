@@ -15,6 +15,7 @@ class Player(BaseModel):
 
 app = FastAPI()
 
+
 @app.post('/update_elo')
 def update_elo(players: List[Player]):
     response = update_scores(players)
