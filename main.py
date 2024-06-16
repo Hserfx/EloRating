@@ -8,7 +8,9 @@ from elo import update_scores
 class Player(BaseModel):
     userId: str
     eloPoints: int
+    eloGains: str
     place: int
+
 
 
 app = FastAPI()
