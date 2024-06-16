@@ -30,7 +30,8 @@ def update_scores(players):
         new_elo = round(new_score(player, est_score, len(players)))
         updated_elo.append(new_elo)
         eloGains = new_elo - player.eloPoints
-        player.eloGains = f'+{eloGains}' if eloGains >= 0 else f'-{eloGains}'
+        player.eloGains = f'+{eloGains}' if eloGains >= 0 else f'{eloGains}'
+
     for player, elo in zip(players, updated_elo):
         player.eloPoints = elo
 
